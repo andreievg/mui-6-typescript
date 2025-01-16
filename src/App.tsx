@@ -1,16 +1,17 @@
 import './App.css';
 import TextField from '@mui/material/TextField';
 
-const Wrapper: typeof TextField = ({ InputProps, ...props }) => (
+const Wrapper: typeof TextField = ({ slotProps, ...props }) => (
   <TextField
-    InputProps={{
-      ...InputProps,
-      sx: { borderRadius: '10px', ...InputProps?.sx },
+    slotProps={{
+      input: {
+        ...slotProps?.input,
+        sx: { borderRadius: '10px', ...slotProps?.input?.sx },
+      },
     }}
     {...props}
   />
 );
-
 function App() {
   return (
     <div>
